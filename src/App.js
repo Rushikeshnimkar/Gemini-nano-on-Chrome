@@ -164,8 +164,11 @@ function App() {
   return (
     <div className="min-h-screen bg-[#f5f7fb] dark:bg-[#0f172a]">
       {/* Sidebar */}
-      <aside className="fixed left-0 top-0 h-full w-72 bg-white dark:bg-gray-800/50 backdrop-blur-lg border-r border-gray-200 dark:border-gray-700/50 p-4">
-        {/* Add this near the top of your sidebar content */}
+      <aside
+        role="complementary"
+        aria-label="Chat settings"
+        className="fixed left-0 top-0 h-full w-72 bg-white dark:bg-gray-800/50 backdrop-blur-lg border-r border-gray-200 dark:border-gray-700/50 p-4"
+      >
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -291,9 +294,9 @@ function App() {
       </aside>
 
       {/* Main Content */}
-      <main className="ml-72">
+      <main role="main" aria-label="Chat messages" className="ml-72">
         {error ? (
-          <div className="p-4">
+          <div className="p-4" role="alert" aria-live="polite">
             <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4">
               <p className="text-red-700 dark:text-red-200">{error}</p>
             </div>
@@ -301,7 +304,10 @@ function App() {
         ) : (
           <div className="h-screen flex flex-col">
             {/* Chat Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <section
+              aria-label="Chat conversation"
+              className="flex-1 overflow-y-auto p-4 space-y-4"
+            >
               {messages.map((message, index) => (
                 <div
                   key={index}
@@ -364,16 +370,22 @@ function App() {
                 </div>
               ))}
               <div ref={messagesEndRef} />
-            </div>
+            </section>
 
             {/* Input Area */}
-            <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4">
+            <footer className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4">
               <form
                 onSubmit={handleSubmit}
                 className="max-w-4xl mx-auto flex items-end space-x-4"
+                role="form"
+                aria-label="Message input form"
               >
                 <div className="flex-1">
+                  <label htmlFor="chat-input" className="sr-only">
+                    Type your message
+                  </label>
                   <textarea
+                    id="chat-input"
                     ref={inputRef}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -386,6 +398,7 @@ function App() {
                     placeholder="Type your message..."
                     rows={1}
                     className="w-full rounded-xl border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                    aria-label="Chat message input"
                   />
                 </div>
                 <button
@@ -396,6 +409,7 @@ function App() {
                       ? "bg-gray-100 dark:bg-gray-700 cursor-not-allowed"
                       : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   }`}
+                  aria-label={isLoading ? "Sending message..." : "Send message"}
                 >
                   {isLoading ? (
                     <svg
@@ -434,7 +448,7 @@ function App() {
                   )}
                 </button>
               </form>
-            </div>
+            </footer>
           </div>
         )}
       </main>
