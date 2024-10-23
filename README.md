@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Gemini Nano Chat 🤖
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern chat interface built with React that leverages Chrome's Built-in AI capabilities through the Prompt API to interact with Gemini Nano locally.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- Real-time chat interface with Gemini Nano
+- Customizable model parameters (temperature, top-k)
+- Token usage tracking
 
-### `npm start`
+## 🛠️ Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Chrome Dev/Canary (Version ≥ 128.0.6545.0)
+- 4GB minimum Video RAM
+- Windows 10/11 or MacOS ≥ 13 (Ventura)
+- Non-metered network connection
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Setup
 
-### `npm test`
+1.Open a new tab in Chrome, go to chrome://flags/#optimization-guide-on-device-model
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.Select Enabled BypassPerfRequirement
 
-### `npm run build`
+3.This bypass performance checks which might get in the way of having Gemini Nano downloaded on your device.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.Go to chrome://flags/#prompt-api-for-gemini-nano , Select Enabled
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5.Relaunch Chrome.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Built-in AI Documentation](https://developer.chrome.com/docs/ai/built-in)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
